@@ -1,0 +1,55 @@
+C=[]
+n=int(input("Enter the no. of students in class:"))
+print("Enter the Students in class and press enter:")
+for i in range(n):
+ data=input()
+ C.append(data)
+print("Students in whole class:",C)
+##############Students who play cricket ****************
+A=[]
+n1=int(input("Enter the No. of students who play Cricket: "))
+print("Enter the Students Name who play Cricket:")
+for i in range(n1):
+ data=input()
+ A.append(data)
+j=[x for x in A if(x in C)]
+print("Students who play cricket from class:",j)
+#****************#Students who play badminton********************
+B=[]
+n2=int(input("Enter the no. of students who play badminton"))
+print("Enter the students name who play Badminton")
+for i in range(n2):
+ data=input()
+ B.append(data)
+f=[x for x in B if(x in C)]
+print("Students who play badminton from class:",f)
+#############Students who play either Cricket or badminton but not
+both##########################3
+c=[x for x in f if(x not in j)]
+d=[x for x in j if(x not in f)]
+cd=c+d
+print("Students who play either cricket nor badminton but not both:",cd)
+print()
+#############list of students who play both Cricket and Badminton################
+print()
+cb=[x for x in f if x in j]
+print("Students who play both cricket and badminton",cb)
+print()
+#############Students who play only Cricket###########
+s=[x for x in j if(x not in f)]
+print("Students who play only Cricket:",s)
+##########Students who play only Badminton###############33
+m=[x for x in f if(x not in j)]
+print("Students who play only Badminton:",m)
+###############No. of students who play neither cricket nor badminton############
+y=[]
+for i in C:
+ if i not in j:
+ y.append(i)
+y_=[]
+for j in C:
+ if j not in f:
+ y_.append(j)
+ a=[x for x in y if x in y_]
+print ("No. of students who play neither cricket nor badminton:",len(a))
+print()
