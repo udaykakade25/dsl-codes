@@ -1,0 +1,78 @@
+--------MATRIX-------------
+
+print("****Matrix Manupulation****")
+r1=int(input("Enter the no of rows:"))
+c1=int(input("Enter the no of columns:"))
+def m1():
+ global m11
+ m11=[]
+ print("Enter the values in rowwise:")
+ for i in range(r1):
+ a=[]
+ for j in range(c1):
+ a.append(int(input()))
+ m11.append(a)
+ for i in range(r1):
+ for j in range(c1):
+ print(m11[i][j],end=" ")
+ print()
+m1()
+print("Enter the values for 2nd matrix:")
+r2=int(input("Enter the no of rows:"))
+c2=int(input("Enter the no of columns:"))
+def m2():
+ global m22
+ m22=[]
+ print("Enter the values in rowwise:")
+ for i in range(r2):
+ b=[]
+ for j in range(c2):
+ b.append(int(input()))
+ m22.append(b)
+ for i in range(r2):
+ for j in range(c2):
+ print(m22[i][j],end=" ")
+ print()
+m2()
+if (r1==r2) and (c1==c2):
+ print("Addition of given matrix is:")
+ output=[[0 for i in range (c2)] for j in range(r1)]
+ for i in range(r1):
+ for j in range(c2):
+ output[i][j]=m11[i][j]+m22[i][j]
+ for i in range(r1):
+ for j in range(c2):
+ print(output[i][j]," ", end=" ")
+ print()
+ print()
+ print("Subtraction of given matrix is:")
+ output=[[0 for i in range(c2)]for j in range(r1)]
+ for i in range(r1):
+ for j in range(c2):
+ output[i][j]=m11[i][j]-m22[i][j]
+ for i in range(r1):
+ for j in range(c2):
+ print(output[i][j]," ",end=" ")
+ print()
+ print()
+else:
+ print("Matrix cant be added or subtracted")
+if (c1==r2):
+ print("Multiplication of matrix")
+ result=[[0 for i in range(c2)]for j in range(r1)]
+ for i in range(len(m11)):
+ for j in range(len(m22[0])):
+ for k in range(len(m22)):
+ result[i][j]+=m11[i][k]*m22[k][j]
+ for r in result:
+ print(r)
+else:
+ print("Matrix can't be multiplied")
+print("Transpose of Matrix ONE-")
+ans=[[0 for j in range(r1)]for i in range(c1)]
+for i in range(c1):
+ for j in range(r1):
+ ans[i][j] = m11[j][i]
+ print(ans[i][j]," ",end=" ")
+ print()
+print()
